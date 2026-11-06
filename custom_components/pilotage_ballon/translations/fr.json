@@ -1,0 +1,84 @@
+{
+ "config": {
+  "step": {
+   "user": {
+    "title": "Pilotage ballon",
+    "description": "Choisissez la prise qui alimente le ballon et son capteur de puissance (en watts). Tout le reste a des valeurs sûres et se règle dans « Configurer ».",
+    "data": {
+     "prise": "Prise du ballon (interrupteur)",
+     "puissance": "Puissance de la prise (capteur en W)",
+     "notification": "Notifications (facultatif)"
+    }
+   },
+   "reconfigure": {
+    "title": "Modifier le ballon",
+    "data": {
+     "prise": "Prise du ballon (interrupteur)",
+     "puissance": "Puissance de la prise (capteur en W)",
+     "notification": "Notifications (facultatif)"
+    }
+   }
+  },
+  "abort": {
+   "already_configured": "Pilotage ballon est déjà installé.",
+   "reconfigure_successful": "Ballon mis à jour."
+  }
+ },
+ "options": {
+  "step": {
+   "init": {
+    "title": "Réglages du ballon",
+    "description": "Les valeurs par défaut sont prudentes. L'allumage automatique reste désactivé tant que vous ne l'activez pas.",
+    "data": {
+     "hc_debut": "Début des heures creuses",
+     "hc_fin": "Fin des heures creuses",
+     "marge_fin": "Chaud avant la fin des heures creuses de (min)",
+     "marge_duree": "Marge sur la durée de chauffe (1,15 = +15 %)",
+     "duree_defaut": "Durée de chauffe supposée tant que rien n'est appris (min)",
+     "seuil_marche": "Puissance au-dessus de laquelle le ballon chauffe (W)",
+     "seuil_arret": "Puissance en dessous de laquelle le thermostat a coupé (W)",
+     "marche_max": "Arrêt de sécurité d'une chauffe commandée (min)",
+     "couper_hp": "Couper la prise en heures pleines"
+    }
+   }
+  },
+  "error": {
+   "seuils": "Le seuil d'arrêt doit être inférieur au seuil de chauffe."
+  }
+ },
+ "entity": {
+  "sensor": {
+   "etat": {
+    "name": "État du ballon",
+    "state": {
+     "inconnu": "État inconnu",
+     "chauffe": "Chauffe en cours",
+     "repos": "Ballon chaud, au repos",
+     "coupe": "Prise éteinte"
+    }
+   },
+   "prochain_allumage": {
+    "name": "Prochain allumage conseillé"
+   },
+   "duree_prevue": {
+    "name": "Durée de chauffe prévue"
+   },
+   "confiance": {
+    "name": "Confiance de l'apprentissage"
+   }
+  },
+  "switch": {
+   "auto": {
+    "name": "Allumage automatique"
+   }
+  },
+  "button": {
+   "forcer": {
+    "name": "Chauffer maintenant"
+   },
+   "arreter": {
+    "name": "Arrêter / annuler l'allumage prévu"
+   }
+  }
+ }
+}

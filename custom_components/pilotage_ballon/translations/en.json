@@ -1,0 +1,84 @@
+{
+ "config": {
+  "step": {
+   "user": {
+    "title": "Water heater control",
+    "description": "Pick the plug powering the water heater and its power sensor (W). Everything else has safe defaults, set in \"Configure\".",
+    "data": {
+     "prise": "Water heater plug (switch)",
+     "puissance": "Plug power (W sensor)",
+     "notification": "Notifications (optional)"
+    }
+   },
+   "reconfigure": {
+    "title": "Edit water heater",
+    "data": {
+     "prise": "Water heater plug (switch)",
+     "puissance": "Plug power (W sensor)",
+     "notification": "Notifications (optional)"
+    }
+   }
+  },
+  "abort": {
+   "already_configured": "Water heater control is already installed.",
+   "reconfigure_successful": "Updated."
+  }
+ },
+ "options": {
+  "step": {
+   "init": {
+    "title": "Water heater settings",
+    "description": "Defaults are cautious. Automatic switching stays off until you enable it.",
+    "data": {
+     "hc_debut": "Off-peak start",
+     "hc_fin": "Off-peak end",
+     "marge_fin": "Hot before off-peak end by (min)",
+     "marge_duree": "Heating time margin (1.15 = +15 %)",
+     "duree_defaut": "Assumed heating time until learned (min)",
+     "seuil_marche": "Power above which it is heating (W)",
+     "seuil_arret": "Power below which the thermostat has cut (W)",
+     "marche_max": "Safety stop of a commanded heating (min)",
+     "couper_hp": "Switch the plug off at peak hours"
+    }
+   }
+  },
+  "error": {
+   "seuils": "Stop threshold must be below the heating threshold."
+  }
+ },
+ "entity": {
+  "sensor": {
+   "etat": {
+    "name": "Water heater state",
+    "state": {
+     "inconnu": "Unknown",
+     "chauffe": "Heating",
+     "repos": "Hot, idle",
+     "coupe": "Plug off"
+    }
+   },
+   "prochain_allumage": {
+    "name": "Next suggested start"
+   },
+   "duree_prevue": {
+    "name": "Expected heating time"
+   },
+   "confiance": {
+    "name": "Learning confidence"
+   }
+  },
+  "switch": {
+   "auto": {
+    "name": "Automatic switching"
+   }
+  },
+  "button": {
+   "forcer": {
+    "name": "Heat now"
+   },
+   "arreter": {
+    "name": "Stop / cancel planned start"
+   }
+  }
+ }
+}
